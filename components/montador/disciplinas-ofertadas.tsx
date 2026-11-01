@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { IconeBusca } from "@/components/icones";
 import { MenuPesquisa } from "@/components/montador/menu-pesquisa";
+import { SliderOcultarConflitos } from "./slider-ocultar-conflitos";
 import {
   FILTROS_OFERTADAS_INICIAIS,
   type FiltrosOfertadas,
@@ -15,6 +16,7 @@ type DisciplinasOfertadasProps = {
 
 export function DisciplinasOfertadas({ ativa, onVoltar }: DisciplinasOfertadasProps) {
   const [filtros, setFiltros] = useState<FiltrosOfertadas>(FILTROS_OFERTADAS_INICIAIS);
+  const [ocultarConflitos, setOcultarConflitos] = useState(false);
   const tituloRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -37,6 +39,11 @@ export function DisciplinasOfertadas({ ativa, onVoltar }: DisciplinasOfertadasPr
       </header>
 
       <MenuPesquisa value={filtros} onChange={setFiltros} />
+
+      <SliderOcultarConflitos
+        checked={ocultarConflitos}
+        onCheckedChange={setOcultarConflitos}
+      />
 
       <div className="sticky bottom-0 -mx-4 mt-auto bg-white px-4 pt-3 pb-6">
         <button
