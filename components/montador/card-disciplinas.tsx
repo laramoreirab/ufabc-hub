@@ -1,14 +1,6 @@
 "use client";
 
-import {
-    CircleStar,
-  Clock,
-  GraduationCap,
-  Info,
-  MapPin,
-  Sun,
-  Trash2,
-} from "lucide-react";
+import { IconeCreditos, IconeMapa, IconeSol, IconeInformacao, IconeRelogio, IconeLixo} from "@/components/icones";
 import { formatarCreditos } from "@/lib/montador/formatar";
 import type { CargaHorariaTpie } from "@/lib/montador/tipos";
 
@@ -51,7 +43,7 @@ export function CardDisciplinas({
             {turma}
           </span>
           <span className="inline-flex items-center gap-1 rounded-md border border-violet-200 bg-violet-50 px-2 py-0.5 text-[11px] font-semibold text-violet-800">
-            <CircleStar className="size-3.5 shrink-0" aria-hidden="true" />
+            <IconeCreditos className="size-3.5 shrink-0" aria-hidden="true" />
             {formatarCreditos(creditos)}
           </span>
         </div>
@@ -61,7 +53,7 @@ export function CardDisciplinas({
           className="grid size-7 shrink-0 place-items-center rounded-full border border-slate-200 text-slate-400 transition hover:bg-slate-50 hover:text-slate-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
           aria-label={`Informações sobre ${nome}`}
         >
-          <Info className="size-3.5" aria-hidden="true" />
+          <IconeInformacao className="size-3.5" aria-hidden="true" />
         </button>
       </div>
 
@@ -72,11 +64,11 @@ export function CardDisciplinas({
 
       <div className="mt-3 flex flex-wrap items-center gap-1.5">
         <span className="inline-flex items-center gap-1 rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-[11px] font-semibold text-slate-600">
-          <MapPin className="size-3 shrink-0 text-slate-400" aria-hidden="true" />
+          <IconeMapa className="size-3 shrink-0 text-slate-400" aria-hidden="true" />
           {campus}
         </span>
         <span className="inline-flex items-center gap-1 rounded-md border border-amber-200 bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-800">
-          <Sun className="size-3 shrink-0" aria-hidden="true" />
+          <IconeSol className="size-3 shrink-0" aria-hidden="true" />
           {turno}
         </span>
         <span className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold tracking-wide text-emerald-800 uppercase">
@@ -85,7 +77,7 @@ export function CardDisciplinas({
       </div>
 
       <div className="mt-3 flex w-full items-center justify-start gap-2 rounded-xl border border-slate-100 bg-slate-100 px-3 py-2.5">
-        <Clock className="size-4 shrink-0 text-emerald-600" aria-hidden="true" />
+        <IconeRelogio className="size-4 shrink-0 text-emerald-600" aria-hidden="true" />
         <span className="text-sm font-bold text-slate-800">
           {horarioInicio} às {horarioFim}
         </span>
@@ -121,7 +113,7 @@ export function CardDisciplinas({
             onClick={onExcluir}
             className="inline-flex shrink-0 cursor-pointer items-center gap-1 rounded-lg border border-red-200 bg-red-50 px-2.5 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 motion-reduce:transition-none"
           >
-            <Trash2 className="size-3.5" aria-hidden="true" />
+            <IconeLixo className="size-3.5" aria-hidden="true" />
             Excluir
           </button>
         ) : null}
